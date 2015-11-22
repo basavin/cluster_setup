@@ -1,0 +1,3 @@
+for i in {1..5}; do scp /home/ubuntu/software/zookeeper-3.4.6/conf/zoo.cfg   node-$i:/home/ubuntu/software/zookeeper-3.4.6/conf/zoo.cfg ;done
+for i in {1..5}; do scp /home/ubuntu/software/apache-storm-0.9.5/conf/storm.yaml    node-$i:/home/ubuntu/software/apache-storm-0.9.5/conf/storm.yaml ;done
+for i in {0..5}; do ssh node-$i "echo $(( $i + 1)) > /home/ubuntu/storage/data/zookeeper/myid" ; done
