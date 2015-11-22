@@ -65,7 +65,6 @@ export PATH=/home/ubuntu/software/hadoop-${COMMON_VERSION}/bin:/home/ubuntu/soft
 export LD_LIBRARY_PATH=${HADOOP_COMMON_HOME}/share/hadoop/common/lib/native/:${LD_LIBRARY_PATH}
 export JAVA_LIBRARY_PATH=${LD_LIBRARY_PATH}
 
-
 start_hdfs(){
 	printf "\n==== START HDFS daemons ! ====\n"
 	hadoop-daemon.sh start namenode
