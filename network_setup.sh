@@ -29,7 +29,6 @@ for i in $(seq 1 $num_rules); do
  	
 	echo "sudo tc class add dev eth2 parent 1: classid 1:$i htb rate ${!bw}$unit ceil ${!bw}$unit"
 	sudo tc class add dev eth2 parent 1: classid 1:$i htb rate ${!bw}$unit ceil ${!bw}$unit
-	#sudo tc qdisc add dev eth2 parent 1:$i handle $i: netem delay 10ms 5ms 25% distribution normal
 	echo "sudo tc filter add dev eth2 protocol ip parent 1:0 prio 1 u32 match ip dst ${!ip}/32 flowid 1:$i"
 	sudo tc filter add dev eth2 protocol ip parent 1:0 prio 5 u32 match ip dst ${!ip}/32 flowid 1:$i
 
